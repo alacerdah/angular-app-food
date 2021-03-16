@@ -1,0 +1,35 @@
+<section class="content-header">
+  <h1>
+    Todos os Restaurantes
+    <a (click)="toggleSearch()" class="pull-right search-link">
+      <span *ngIf="searchId.value">
+        <small>"{{searchId.value}}"</small>
+      </span>
+      <i class="fa fa-search"></i>
+    </a>
+  </h1>
+  <div class="row">
+    <div class="col-xs-12 search-bar" [@toggleSearch]="searchBarState">
+      <form [formGroup]="searchForm">
+        <div class="form-group">
+          <input formControlName="searchControl" #searchId type="text" class="form-control"
+            placeholder="Pesquise aqui o seu restaurante favorito!">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<section class="content">
+  <div class="row">
+    <div *ngFor="let restaurant of restaurants" class="col-sm-6 col-xs-12">
+      <mt-restaurant [restaurant]="restaurant"></mt-restaurant>
+    </div>
+    <div *ngIf="restaurants?.length === 0" class="col-xd-12">
+      <p class="lead text-center">
+        Não foi encontrado nada parça.
+      </p>
+    </div>
+  </div>
+</section>
