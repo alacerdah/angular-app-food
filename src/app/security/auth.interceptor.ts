@@ -9,6 +9,7 @@ export class AuthInterceptor implements HttpInterceptor {
     constructor(private injector: Injector) {
 
     }
+
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const loginServ = this.injector.get(LoginService)
         if (loginServ.isLoggedIn()) {
@@ -17,6 +18,6 @@ export class AuthInterceptor implements HttpInterceptor {
             return next.handle(authRequest)
         } else {
             return next.handle(request)
-        }             
+        }
     }
 }

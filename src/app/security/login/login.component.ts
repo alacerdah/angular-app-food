@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe(u =>
         this.notificationService.notify(`Bem vindo, ${u.name}`),
-        response => //htttp
+        response =>
           this.notificationService.notify(response.error.message),
           () =>{
             this.router.navigate([atob(this.navigateTo)])
