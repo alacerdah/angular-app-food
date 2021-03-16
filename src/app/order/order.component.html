@@ -1,9 +1,8 @@
 <section class="content-header"></section>
+
 <section class="content">
   <section class="invoice">
-
     <form [formGroup]="orderForm" novalidate>
-
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
@@ -49,16 +48,13 @@
             <input class="form-control" formControlName="address" autocomplete="off"
               placeholder="Endereço">
           </mt-input-container>
-
         </div>
-
         <div class="col-sm-3 col-xs-6">
           <mt-input-container errorMessage="obrigatório e somente números" label="Número">
             <input type="text" class="form-control" formControlName="number" autocomplete="off"
               placeholder="Número">
           </mt-input-container>
         </div>
-
         <div class="col-sm-3 col-xs-6">
           <div class="form-group">
             <mt-input-container label="Número">
@@ -66,7 +62,6 @@
             </mt-input-container>
           </div>
         </div>
-
       </div>
       <div class="row">
         <div class="col-xs-12">
